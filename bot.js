@@ -11,6 +11,10 @@ require('fs').readdir('./commands/', (err, files) => {
 })
 
 bot.on('ready', () => {
+  bot.user.setActivity("Loading Hulk Moosic...", {type: "STREAMING", url: "https://twitch.tv/discordapp"})
+  setTimeout(() => {
+    bot.user.setActivity(`over FHG's Discord | f:help`)
+  }, 10000)
   console.log("%s is ready!".replace("%s", bot.user.username))
 })
 
