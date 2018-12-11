@@ -41,3 +41,4 @@ function play(id, message) {
   })
 }
 module.exports.help = {name: "play"}
+module.exports.queue = queue
