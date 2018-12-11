@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "discord.js": "latest",
+    "request": "latest",
+    "ytdl-core": "latest",
+    "node-opus": "latest"  
+  }
+}
