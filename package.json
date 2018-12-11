@@ -3,6 +3,8 @@
     "discord.js": "latest",
     "request": "latest",
     "ytdl-core": "latest",
-    "node-opus": "latest"  
+    "node-opus": "latest",
+    "ffmpeg": "latest",
+    "ffmpeg-binaries": "latest"
   }
 }
