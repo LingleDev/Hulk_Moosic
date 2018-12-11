@@ -13,7 +13,7 @@ module.exports.run = (bot, message, args) => {
 }
 
 function search(p, c) {
-  request(`https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=${encodeURIComponent(params)}&key=${key}`, (err, res, body) => {
+  request(`https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=${encodeURIComponent(p)}&key=${key}`, (err, res, body) => {
     const json = JSON.parse(body)
     if(!json.items) return c("error!");
     
