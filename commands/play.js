@@ -5,7 +5,11 @@ var queue = []
 
 module.exports.run = (bot, message, args) => {
   const params = args.join(" ");
-  
+  search(params, id => {
+    play(id, message)
+    const em = new (require('discord.js').RichEmbed)()
+    .addField(`Started Playing Music`, `I started playing music in ${message.member.voiceChannel.name}.`)
+  })
 }
 
 function search(p, c) {
