@@ -19,6 +19,9 @@ bot.on('message', message => {
   const args = mArray.slice(1)
   const log_cmd = mArray[0].slice(prefix.length)
   const cmd = bot.commands.get(log_cmd)
+  if (!message.guild) return;
+  if (!message.content.startsWith(prefix)) return;
+  if (message.author.bot) return;
   
   if (cmd) {
     cmd.run(bot, message, args)
