@@ -2,13 +2,16 @@ const request = require('request')
 const key = process.env.apikey
 const dl = require('ytdl-core')
 var queue = []
+var playing = false;
 
 module.exports.run = (bot, message, args) => {
   const params = args.join(" ");
   search(params, id => {
     play(id, message)
+    playing = true
     const em = new (require('discord.js').RichEmbed)()
     .addField(`Started Playing Music`, `I started playing music in ${message.member.voiceChannel.name}.`)
+    message.channel.send({embed: em})
   })
 }
 
@@ -30,11 +33,13 @@ function play(id, message) {
     
     var dispatch = c.playStream(stream)
     dispatch.on('end', () => {
-      if (queue.length > 0) {
+      if (queue.length > 0 || playing == true) {
         queue.shift()
         play(queue[0], message)
+        playing = true;
       } else {
         vc.leave()
+        playing = false;
         const em = new (require(`discord.js`).RichEmbed)()
         .addField(`End of Queue`, `I stopped playing music in ${vc.name}.`)
         .setTimestamp()
