@@ -35,6 +35,7 @@ function play(id, message) {
     dispatch.on('end', () => {
       if (queue.length > 0 || playing == true) {
         queue.shift()
+        queue.push(id)
         play(queue[0], message)
         playing = true;
       } else {
