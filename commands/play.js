@@ -1,4 +1,4 @@
-const key = process.env.yt
+const key = process.env.apikey
 const get = require('request')
 const dl = require('ytdl-core')
 
