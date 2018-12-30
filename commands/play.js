@@ -44,7 +44,6 @@ module.exports.run = (bot, message, args) => {
 
 function play(id, message) {
   var voicechannel = message.member.voiceChannel;
-  if (!isTester) return message.channel.send("Sorry, only testers can use the music module.");
   voicechannel.join().then(conn => {
     stream = dl(`https://youtube.com/watch?v=${id}`, {
       filter: "audioonly"
