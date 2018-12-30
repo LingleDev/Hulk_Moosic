@@ -7,6 +7,7 @@ var playing = false;
 module.exports.run = (bot, message, args) => {
   const params = args.join(" ");
   search(params, id => {
+    if (playing) return queue.push(id);
     play(id, message)
     playing = true
     const em = new (require('discord.js').RichEmbed)()
@@ -32,7 +33,7 @@ function play(id, message) {
     })
     
     var dispatch = c.playStream(stream)
-    dispatch.on('end', () => {
+    dispatch.on('end', j() => {
       if (queue.length > 0 || playing == true) {
         queue.shift()
         queue.push(id)
