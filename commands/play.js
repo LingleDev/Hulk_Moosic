@@ -33,7 +33,7 @@ function play(id, message) {
     })
     
     var dispatch = c.playStream(stream)
-    dispatch.on('end', j() => {
+    dispatch.on('end', () => {
       if (queue.length > 0 || playing == true) {
         queue.shift()
         queue.push(id)
