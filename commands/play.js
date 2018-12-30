@@ -1,5 +1,7 @@
 const key = process.env.apikey
 const get = require('request')
+const ytinfo = require('youtube-info')
+const 
 const dl = require('ytdl-core')
 
 var queue = []
