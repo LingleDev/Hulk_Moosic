@@ -13,7 +13,7 @@ require('fs').readdir('./commands/', (err, files) => {
 bot.on('ready', () => {
   bot.user.setActivity("Loading Hulk Moosic...", {type: "STREAMING", url: "https://twitch.tv/discordapp"})
   setTimeout(() => {
-    bot.user.setActivity(`over FHG's Discord | f:help`)
+    bot.user.setActivity(`music in FHG's Discord | f:help`, {type: "PLAYING"})
   }, 10000)
   console.log("%s is ready!".replace("%s", bot.user.username))
 })
