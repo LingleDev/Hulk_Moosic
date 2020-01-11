@@ -7,9 +7,6 @@
     "ffmpeg": "latest",
     "ffmpeg-binaries": "latest",
     "get-youtube-id": "latest",
-    "youtube-info": "latest",
-    "zlib-sync": "latest",
-    "erlpack": "latest",
-    "@discordjs/uws": "latest"
+    "youtube-info": "latest"
   }
 }
