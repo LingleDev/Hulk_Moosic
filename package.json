@@ -10,8 +10,6 @@
     "youtube-info": "latest",
     "zlib-sync": "latest",
     "erlpack": "latest",
-    "sodium": "latest",
-    "libsodium-wrappers": "latest",
     "@discordjs/uws": "latest"
   }
 }
